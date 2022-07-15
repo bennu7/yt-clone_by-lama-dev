@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 // app.use(middleware);
 
 // handling middleware error
-app.use((err, req, res, nest) => {
+app.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.status || "Something went wrong!";
   return res.status(status).json({
